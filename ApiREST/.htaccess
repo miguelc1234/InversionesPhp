@@ -1,0 +1,11 @@
+Options +FollowSymLinks -MultiViews
+
+RewriteEngine On
+
+RewriteBase /ZmartBuy/ApiREST 
+
+RewriteCond %{REQUEST_FILENAME} !-d  
+RewriteCond %{REQUEST_FILENAME} !-f  
+RewriteCond %{REQUEST_FILENAME} !-l 
+
+RewriteRule ^(.+)$ RESTFull.php?url=$1 [QSA,NC,L]   
